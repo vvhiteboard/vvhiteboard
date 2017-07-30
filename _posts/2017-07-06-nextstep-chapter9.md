@@ -1,8 +1,11 @@
-# 9장 
+---
+layout: post
+title:  "Chapter 9"
+categories: nextStep
+tags: jekyll blog theme devlog
+---
 
-## 모르는것
-
-### 승재
+### 모르는것
 
 -  WebServer의 초기화 과정
 -  소스코드의 호출 순서 및 흐름
@@ -13,20 +16,13 @@
 -  서블릿을 잘못 구현한 경우 (동시성 문제)
    -  책에서 추천해준 영상 보기
 -  조합이란? (composition)
-
-
-
-
-
-### 호성
-
 -  ModelAndView에서 render 메서드의 역할은?
 
 
 
 
 
-## 알아본 것
+### 알아본 것
 
 
 
