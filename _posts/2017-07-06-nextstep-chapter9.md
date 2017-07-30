@@ -7,6 +7,8 @@ tags: jekyll blog theme devlog
 
 ### 모르는것
 
+---
+
 -  WebServer의 초기화 과정
 -  소스코드의 호출 순서 및 흐름
 -  한글이 깨지는 현상을 ServletFilter로 해결
@@ -21,10 +23,9 @@ tags: jekyll blog theme devlog
 
 
 
-
 ### 알아본 것
 
-
+---
 
 -  WebServer의 초기화 과정
    -  서블릿 컨테이너(톰캣)이 실행되면서 등록된 이벤트 리스너에 정의된 ServletContextListener의 contextInitialized() 메서드를 호출한다.
