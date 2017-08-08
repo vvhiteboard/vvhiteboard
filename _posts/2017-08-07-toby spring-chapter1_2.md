@@ -14,13 +14,11 @@
 
 ---
 
-<br>
-
 객체지향 디자인 원리들을 이용하면 더 유지보수하기 쉽고, 유연하고, 확장이 쉬운 소프트웨어를 만들 수 있다.
 
 <br>
 
- #### SRP (Single Responsibility Principle)
+#### SRP (Single Responsibility Principle)
 
 >  단일 책임의 원칙
 
