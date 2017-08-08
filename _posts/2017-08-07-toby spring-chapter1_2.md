@@ -1,6 +1,6 @@
 # Chapter1-2
 
-### 목록
+## 목록
 
 ---
 
@@ -10,7 +10,7 @@
 
 <br>
 
-### 객체지향 설계원칙 (SOLID)
+## 객체지향 설계원칙 (SOLID)
 
 ---
 
@@ -18,13 +18,13 @@
 
 <br>
 
-#### SRP (Single Responsibility Principle)
+### SRP (Single Responsibility Principle)
 
 >  단일 책임의 원칙
 
 작성된 클래스는 하나의 기능만을 제공해야 하며 클래스의 책임은 해당 기능을 수행하는데 집중해야 한다는 원칙이다. SRP 원칙을 적용하면 책임 영역이 확실해지기 때문에 변경이 필요한 경우 다른 영역에 영향이 가지 않도록 할 수 있다.
 
-
+<br>
 
 **[적용방법]**
 
@@ -52,8 +52,6 @@ public class Monitor {
 }
 ```
 
-<br>
-
 위 코드에서 공통적인 부분을 하나의 클래스로 추출하고 각 하위 클래스에 있어야하는 기능은 하위 클래스에 포함한다.
 
 <br>
@@ -77,15 +75,13 @@ public class Monitor extends Product {
 }
 ```
 
-<br>
-
 위와 같이 상위 클래스인 Product로 추출할 수 있다. 이렇게 하면 상위 클래스는 물건의 번호, 가격에 집중할 수 있고 각 컴퓨터와 모니터는 자신들에게 주어진 정보/기능만 제공하는데 집중할 수 있다.
 
 물론 위의 코드가 좋은 코드라고 할 수는 없지만 단일 책임 원칙을 이해하는데 부족함이 없다.
 
 <br>
 
-#### OCP (Open-Closed Principle)
+### OCP (Open-Closed Principle)
 
 >  개방폐쇄의 원칙 
 
@@ -168,7 +164,7 @@ public class Bus extends Transport {
 
 public class Train extends Transport {
   @Override
-  public void operateTrain() {
+  public void move() {
     // 기차를 운전
   }
 }
@@ -189,13 +185,13 @@ public class Travel {
 
 <br>
 
-#### LSP (The Liskov Subtitution Principle)
+### LSP (The Liskov Subtitution Principle)
 
 >  리스코프 치환 원칙
 
 LSP란 상위 클래스가 있고 상위 클래스를 상속받은 하위 클래스가 있을 때 상위 클래스는 항상 하위 클래스를 호환할 수 있어야 한다는 원칙이다. 자바에서의 다형성 개념과 관련이 있다. 대표적인 LSP의 예로 JAVA의 Collection 모듈이 있다.
 
-
+<br>
 
 **[예제 코드]**
 ```java
@@ -205,8 +201,6 @@ public interface Shape {
   double getArea();
 }
 ```
-<br>
-
 부모 클래스(인터페이스) 인 Shape가 있다.
 
 <br>
@@ -227,9 +221,7 @@ public class Rectangle implements Shape {
       return width * height;
   }
 }
-```
-<br>
-```java
+
 public class Triangle implements Shape {
   private int width;
   private int height;
@@ -247,8 +239,6 @@ public class Triangle implements Shape {
   }
 }
 ```
-<br>
-
 Shape를 구현한 Rectangle과 Triangle 클래스가 있다.
 
 <br>
@@ -270,13 +260,11 @@ public class Driver {
   }
 }
 ```
-<br>
-
 Rectangle과 Triangle은 항상 Shape형 변수에 담을 수 있으며 Shape과 항상 호환될 수 있다. 따라서 위의 코드는 LSP원칙을 지키는 코드가 된다.
 
 <br>
 
-#### ISP (Interface Segregation Principle)
+### ISP (Interface Segregation Principle)
 
 >  인터페이스 분리의 원칙
 
@@ -380,7 +368,7 @@ ISP 역시 SRP와 마찬가지로 코드를 분리할 것을 요구한다. 다�
 
 <br>
 
-#### DIP (Dependency Inversion Principle)
+### DIP (Dependency Inversion Principle)
 
 >  의존성 역전의 원칙
 
@@ -450,25 +438,21 @@ public class Driver {
 
 <br>
 
-### 전략 패턴 (Strategy Pattern)
-
-
+## 전략 패턴 (Strategy Pattern)
 
 >  어플리케이션에서 달라지는 부분을 찾아내고, 달라지지 않는 부분으로부터 분리 시킨다.
 
-전략패턴을 한마디로 이야기하면 위와 같다. 개발을 할 때 달라지는 부분과 달라지지 않는 부분을 분리시켜 개발하면 
-
 전략 패턴은 해당 클래스의 기능에서 필요에 따라 변경이 필요한 비지니스 로직을 인터페이스를 통해 통째로 외부로 분리시키고, 이 비지니스 로직을 구현한 구체적인 클래스를 필요에 따라 바꿔서 사용할 수 있게 하는 디자인 패턴이다.
-
-<br>
-
-UserDAOTest는 전략패턴의 클라이언트이다. 컨텍스트(UserDAO)를 사용하는 클라이언트(UserDAOTest)는 컨텍스트가 사용할 전략(ConnectionMaker를 구현한 클래스)을 컨텍스트의 생성자 등을 통해 제공하고 컨텍스트의 기능을 사용한다.
 
 <br>
 
 **[예제코드]**
 
 하나의 ConnectionMaker가 있고 각 N사, K사 별로 ConnectionMaker가 필요하다고 하자.
+
+UserDAOTest는 전략패턴의 클라이언트이다. 컨텍스트(UserDAO)를 사용하는 클라이언트(UserDAOTest)는 컨텍스트가 사용할 전략(ConnectionMaker를 구현한 클래스)을 컨텍스트의 생성자 등을 통해 제공하고 컨텍스트의 기능을 사용한다.
+
+<br>
 
 **ConnectionMaker 인터페이스와 관련 클래스**
 
@@ -531,8 +515,6 @@ public class UserDAO {
 }
 ```
 
-<br>
-
 UserDAO의 add메서드와 get 메서드는 전략 패턴의 Context에 해당한다.
 Context는 클래스 자신의 핵심 기능을 말하고 전략(Strategy)은 클래스가 이를 수행하는데 필요한 기능 중 변경이 발생 가능한 기능을 말한다.
 
@@ -565,4 +547,3 @@ public class UserDAOTest {
 따라서 UserDAO를 사용하는 UserDAOTest 클래스는 어떤 ConnectionMaker를 사용할지 UserDAO에게 전달해줄 필요가 있다. 위 코드를 보면 UserDAO를 생성할 때 connectionMaker를 선택해서 넘겨주면 그에 따라 UserDAO가 전략에 맞는 connection을 생성하여 사용할 것이다.
 
 <br>
-
