@@ -128,7 +128,7 @@ public class Travel {
     this.airplane = air;
   }
   
-  public void setBus(Bus bus) ={
+  public void setBus(Bus bus) {
     this.bus = bus;
   }
   
